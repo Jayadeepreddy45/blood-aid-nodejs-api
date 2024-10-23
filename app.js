@@ -41,8 +41,7 @@ db.connect((err) => {
 // Register
 app.post("/register", (req, res) => {
   const {username,password,email,phone_number,bloodgroup,DOB,address,city,state,pincode} = req.body;
-  const query = `INSERT INTO user (username, password, email, phone_number, blood_group, dob, address, city, state, pin_code) 
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  const query = `INSERT INTO user (username, password, email, phone_number, blood_group, dob, address, city, state, pin_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   db.query(
     query,[username,password,email,phone_number,bloodgroup,DOB,address,city,state,pincode],
